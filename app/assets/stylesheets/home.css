@@ -1,0 +1,24 @@
+.BackNavbar{
+    background-color: #023047;
+}
+
+.nav-link{
+    color: #FFB703
+}
+
+.BodyBackground{
+    background-color: #97DFFC;
+}
+
+.imageBody{
+    width:75%; 
+    height: 50%;
+    border-radius: 50%;
+   box-shadow: #93DFF9;
+}
+.camera-retro{
+
+    color: #023047;
+    width: 50%;
+
+}
