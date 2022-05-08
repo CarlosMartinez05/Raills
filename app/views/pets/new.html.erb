@@ -5,16 +5,24 @@
  </div>
  <% end%>
  <%= f.label :name %>
- <%= f.text_field :name %>
+ <%= f.text_field :name %><br>
  <%= f.label :Age %>
- <%= f.text_field :Age %>
+ <%= f.text_field :Age %><br>
   <%= f.label "owner Pets" %>
- <%= f.text_field :OwnerPets %>
+ <%= f.text_field :OwnerPets %><br>
   <%= f.label 'phone number owner' %>
- <%= f.text_field :PhoneNumberOwnerPets %>
+ <%= f.text_field :PhoneNumberOwnerPets %><br>
  <%= f.label :weith %>
- <%= f.text_field :weith %>
+ <%= f.text_field :weith %><br>
+ <%= f.label :sex %>
+ <%= f.text_field :sex %><br>
+ <%= f.label :sterillized %>
+ <%= f.text_field :sterillized %><br>
+ <%= f.label :breed %>
+ <%= f.text_field :breed %><br>
+ <%= f.label :specie %>
+ <%= f.text_field :specie %><br>
  <%= f.label :'photo pet' %>
- <%= f.file_field :avatarPets %>
+ <%= f.file_field :avatarPets %><br>
 <%= f.submit%>
 <% end %>

@@ -5,7 +5,7 @@ class PetsController < ApplicationController
       end
     
       def show
-        @pet = Pet.find(pets_params)
+      @pet = Pet.find(params[:id])
       end
     
       def new
@@ -15,7 +15,7 @@ class PetsController < ApplicationController
       def create
         @pet = Pet.new(pets_params)
         if @pet.save
-          return redirect_to '/'
+          return redirect_to '/doctor/pets/index'
          else 
           render :new, status: :unprocessable_entity
          end  
@@ -35,6 +35,6 @@ class PetsController < ApplicationController
       
     private
     def pets_params
-       params.require(:pets).permit(:name, :weith, :Age, :avatarPets, :OwnerPets, :PhoneNumberOwnerPets)
+       params.require(:pets).permit(:name, :weith, :Age, :avatarPets, :OwnerPets, :PhoneNumberOwnerPets, :sex, :breed, :specie, :sterillized)
     end
 end

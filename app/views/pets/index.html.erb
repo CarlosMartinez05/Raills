@@ -7,7 +7,7 @@
     <p class="card-text">Weith:<%= pet.weith%></p>
     <p class="card-text">Owner:<%= pet.OwnerPets %></p>
     <p class="card-text">Phone number Owner:<%= pet.PhoneNumberOwnerPets %></p>
-    <a href="/users/doctor/detail/:id" class="btn btn-primary">detail</a>
+    <a href="<%= link_to pet_path(pet.id), class:"btn btn-primary"%>" class="btn btn-primary">detail</a>
   </div>
 </div>
 <% end %>
