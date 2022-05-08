@@ -8,6 +8,13 @@ Rails.application.routes.draw do\
     post '/users/edit', to: 'users#update', ad:'updateUser'
 
     #Routes for Doctors
+    get '/users/doctor/show', to: 'doctor#show', as: 'showDoctor'
     get '/users/doctor/new', to: 'doctor#new', as: 'newDoctor'
     post '/users/doctor/new', to: 'doctor#create', as: 'createDoctor'
+    get '/users/doctor/detail/:id', to: 'doctor#detail', as: 'detailDoctor'
+
+    #Route for Pets 
+    get 'doctor/pets/index', to: 'pets#index', as: 'indexPets'
+    get 'doctor/pets/new', to: 'pets#new', as: 'newPets'
+    post 'doctor/pets/new', to: 'pets#create', as: 'createPets'
 end

@@ -1,0 +1,10 @@
+<% @doctor.each do | doctor|%>
+<div class="card" style="width: 18rem;">
+<%= image_tag doctor.avatarDr %>
+  <div class="card-body">
+    <h5 class="card-title"><%= doctor.name %></h5>
+    <p class="card-text">Age:<%= doctor.Age%></p>
+    <a href="/users/doctor/detail/:id" class="btn btn-primary">detail</a>
+  </div>
+</div>
+<% end %>

@@ -1,5 +1,14 @@
 class DoctorController < ApplicationController
 
+      def show
+        @doctor = Doctor.all
+    
+      end
+      def detail
+        @doctor = Doctor.find(doctor_params)
+      end
+
+
       def new
         @doctor = Doctor.new
       end
@@ -29,6 +38,6 @@ class DoctorController < ApplicationController
 
     private
       def doctor_params
-          params.require(:doctor).permit(:name, :email, :Age)
+          params.require(:doctor).permit(:name, :email, :Age, :avatarDr, :id)
       end
 end

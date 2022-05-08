@@ -1,0 +1,20 @@
+<%= form_for :pets do | f | %>
+<% @pet.errors.full_messages.each do |error| %>
+ <div>
+ <%= error %>
+ </div>
+ <% end%>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+ <%= f.label :Age %>
+ <%= f.text_field :Age %>
+  <%= f.label "owner Pets" %>
+ <%= f.text_field :OwnerPets %>
+  <%= f.label 'phone number owner' %>
+ <%= f.text_field :PhoneNumberOwnerPets %>
+ <%= f.label :weith %>
+ <%= f.text_field :weith %>
+ <%= f.label :'photo pet' %>
+ <%= f.file_field :avatarPets %>
+<%= f.submit%>
+<% end %>
