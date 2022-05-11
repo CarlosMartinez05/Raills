@@ -1,43 +1,63 @@
 class DoctorController < ApplicationController
 
-      def show
+      def index
+      
         @doctor = Doctor.all
     
       end
-      def detail
-        @doctor = Doctor.find(doctor_params)
-      end
-
-
+      
       def new
+        
         @doctor = Doctor.new
+        
       end
     
       def create
+       
         @doctor = Doctor.new(doctor_params)
-
-
         if @doctor.save
-         return redirect_to '/'
+          return redirect_to '/doctor/index'
+         flash[:notice] = 'Create new doctor successfully'
         else 
-         render :new, status: :unprocessable_entity
+          render :new, status: :unprocessable_entity
         end  
+      
       end
-    
-      def update
+      
+      def show
+      
         @doctor = Doctor.find(params[:id])
+      
       end
-    
+      
       def edit
+
         @doctor = Doctor.find(params[:id])
+       
+      end
+      
+      def update         
+        @doctor = Doctor.find(params[:id])
+        
+        if @doctor.update doctor_params
+          return redirect_to'/doctor/index'
+        else
+          render :edit, status: :unprocessable_entity
+        end
+       
       end
     
       def destroy
-        doctor = Doctor.find(params[:id])
+
+        @doctor = Doctor.find(params[:id])
+        @doctor.destroy
+        redirect_to indexDoctor_path
+       
+
       end
 
     private
       def doctor_params
-          params.require(:doctor).permit(:name, :email, :Age, :avatarDr, :id)
+          params.require(:doctor).permit(:name, :email, :Age, :avatarDr)
       end
 end

@@ -15,26 +15,32 @@ class PetsController < ApplicationController
       def create
         @pet = Pet.new(pets_params)
         if @pet.save
-          return redirect_to '/doctor/pets/index'
+          return redirect_to '/pets/index'
          else 
           render :new, status: :unprocessable_entity
          end  
       end
-    
-      def update
-        @pet = Pet.find(pets_params)
+      
+      def edit
+        @pet = Pet.find(params[:id])
       end
     
-      def edit
-        @pet = Pet.find(pets_params)
+      def update         
+       @pet = Pet.find(params[:id])
+
+       if @pet.update pets_params
+        return redirect_to'/pets/index'
+       else
+        render :edit, status: :unprocessable_entity
+       end
       end
     
       def destroy
         @pet = Pet.find(pets_params)
       end
-      
+    
     private
-    def pets_params
-       params.require(:pets).permit(:name, :weith, :Age, :avatarPets, :OwnerPets, :PhoneNumberOwnerPets, :sex, :breed, :specie, :sterillized)
-    end
+     def pets_params
+       params.require(:pet).permit(:name, :weith, :Age, :avatarPets, :OwnerPets, :PhoneNumberOwnerPets, :sex, :breed, :specie, :sterillized)
+     end
 end

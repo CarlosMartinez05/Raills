@@ -1,16 +1,2 @@
-<%= form_for :doctor do | f |%>
- <% @doctor.errors.full_messages.each do |error| %>
- <div>
- <%= error %>
- </div>
- <% end%>
- <%= f.label :name %>
- <%= f.text_field :name %>
- <%= f.label :email %>
- <%= f.text_field :email %>
- <%= f.label :Age %>
- <%= f.text_field :Age %>
- <%= f.label :'photo profile' %>
- <%= f.file_field :avatarDr %>
-<%= f.submit%>
-<% end%>
+<h1>new doctor</h1>
+<%= render 'form' %>
