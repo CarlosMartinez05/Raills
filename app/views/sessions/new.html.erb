@@ -1,0 +1,17 @@
+<h1 class = 'display-6'>Login</h1>
+
+<%= form_tag newSessions_path do |form| %>
+<form class="row g-3">
+  <div class="col-auto">
+   <%= label_tag :email, nil, class: "visually-hidden"%>
+   <%= text_field_tag :email, nil, class: "form-control-plaintext", value: "example@email.com", id: "staticEmail2" %>
+  </div>
+  <div class="col-auto">
+    <%= label_tag :paswword, nil, class:"visually-hidden"%>
+    <%= password_field_tag :password, nil , class:"form-control", id:"inputPassword2", placeholder: "Password"%>
+  </div>
+  <div class="col-auto">
+  <%= button_to 'Login', createSessions_path, class: "btn btn-info mb-3"%>
+  </div>
+</form>
+<% end%>

@@ -1,2 +1,4 @@
 <h1>Edit Pets</h1>
 <%= render 'form'%>
+<%= button_to 'delete', destroypets_path(@pet),method: :delete, data:{
+} , class: 'btn btn-primary'%>

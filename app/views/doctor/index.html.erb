@@ -1,3 +1,6 @@
+<%= link_to 'new-Doctor', newDoctor_path ,class: 'btn btn-info'%>
+<%= link_to 'Go-Pets', indexPets_path ,class: 'btn btn-info'%>
+<%= link_to 'sign-Out', destroySessions_path ,class: 'btn btn-danger'%>
 <% @doctor.each do | doctor |%>
 <div class="card" style="width: 18rem;">
 <%= image_tag doctor.avatarDr %>
@@ -8,4 +11,3 @@
   </div>
 </div>
 <% end %>
-<%= link_to 'new', newDoctor_path ,class: 'btn btn-info'%>
