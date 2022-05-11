@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+<%= image_tag @pet.avatarPets %>
+<%= @pet.name %>
+  <div class="card-body">
+    <p class="card-text">Age:<%= @pet.Age%></p>
+    <p class="card-text">Sex:<%= @pet.sex%></p>
+    <p class="card-text">sterillized:<%= @pet.sterillized%></p>
+    <p class="card-text">Weith:<%= @pet.weith%></p>
+    <p class="card-text">Breed:<%= @pet.breed%></p>
+     <p class="card-text">Specie:<%= @pet.specie%></p>
+    <p class="card-text">Owner:<%= @pet.OwnerPets %></p>
+    <p class="card-text">Phone number Owner:<%= @pet.PhoneNumberOwnerPets %></p>
+    <%= link_to @pet.name, petsEdit_path(@pet.id), class:"btn btn-primary"%>
+  </div>
+</div>

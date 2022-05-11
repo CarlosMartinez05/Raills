@@ -1,5 +1,8 @@
 class Doctor < ApplicationRecord
 
-validates :name, :email, :Age, presence: true
+    has_one_attached :avatarDr
+
+    
+    validates :name, :email, :Age, :avatarDr, presence: true
 
 end
