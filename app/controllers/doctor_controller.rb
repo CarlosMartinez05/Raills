@@ -15,7 +15,7 @@ class DoctorController < ApplicationController
       def create
        
         @doctor = Doctor.new(doctor_params)
-        if @doctor.save
+        if @doctor.save()
           return redirect_to '/doctor/index'
          flash[:notice] = 'Create new doctor successfully'
         else 
@@ -58,6 +58,6 @@ class DoctorController < ApplicationController
 
     private
       def doctor_params
-          params.require(:doctor).permit(:name, :email, :Age, :avatarDr)
+          params.require(:doctor).permit(:name, :email, :Age, :avatarDr, :user_id)
       end
 end
