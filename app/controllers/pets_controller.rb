@@ -21,6 +21,7 @@ class PetsController < ApplicationController
       def create
       
         @pet = Pet.new(pets_params)
+        @pet.doctor_id = 1
         if @pet.save
           return redirect_to '/pets/index'
          else 
@@ -53,6 +54,9 @@ class PetsController < ApplicationController
       end
     private
      def pets_params
-       params.require(:pet).permit(:name, :weith, :Age, :avatarPets, :OwnerPets, :PhoneNumberOwnerPets, :sex, :breed, :specie, :sterillized)
+       params.require(:pet).permit(:name, :weith, :Age, 
+        :avatarPets, :OwnerPets, :PhoneNumberOwnerPets, 
+        :sex, :breed, :specie, :sterillized,
+         )
      end
 end

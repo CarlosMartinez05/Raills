@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_214122) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_20_171446) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -61,6 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_214122) do
     t.string "sterillized"
     t.string "breed"
     t.string "specie"
+    t.integer "doctor_id", null: false
+    t.index ["doctor_id"], name: "index_pets_on_doctor_id"
   end
 
 # Could not dump table "users" because of following StandardError
@@ -69,4 +71,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_214122) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doctors", "users"
+  add_foreign_key "pets", "doctors"
 end

@@ -11,11 +11,13 @@ class DoctorController < ApplicationController
         @doctor = Doctor.new
         
       end
-    
+      
       def create
-       
+        
         @doctor = Doctor.new(doctor_params)
-        if @doctor.save()
+        @doctor.user_id = session[:user_id]
+        session[:doctor_id] = @doctor.id
+        if @doctor.save
           return redirect_to '/doctor/index'
          flash[:notice] = 'Create new doctor successfully'
         else 
